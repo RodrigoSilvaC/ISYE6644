@@ -83,4 +83,4 @@ Eventually, the system clears at time 29. This table is tedious to do, but every
 
 Another way of looking at this table is graphically:
  
-![Graph 1](Graph1.png)
+![Graph 1](C:/Users/Rodrigo Silva/Documents/ISYE6644/virtualenv/.git/Graph1.png)
