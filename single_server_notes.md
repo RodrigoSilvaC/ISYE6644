@@ -11,7 +11,7 @@ Customers arrive at a single-server queue with iid interarrival times and iid se
 ### Notation
 1. **Interarrival time between customers** *i-1* **and** *i* is *I<sub>i*. We will generate this variable randomly.
 2. **Customer** *i* **'s arrival time is:**\
- *A<sub>i</sub> = $\sum_{j = 1}^{i} I<sub>j</sub>$*\
+ *A<sub>i</sub> = <a href="https://www.codecogs.com/eqnedit.php?latex=\sum_{j=1}^{i}{I_{i}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum_{j=1}^{i}{I_{i}}" title="\sum_{j=1}^{i}{I_{i}}" /></a>*\
  This means that the customer's arrival time is just the sum of all the interarrival time between customers.
 3.  **Customer** *i* **is going to start service at time**\
 *T<sub>i</sub> = max(A<sub>i</sub>,D<sub>i-1</sub>)*\
