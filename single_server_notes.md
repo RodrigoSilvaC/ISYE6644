@@ -84,3 +84,14 @@ Eventually, the system clears at time 29. This table is tedious to do, but every
 Another way of looking at this table is graphically:
  
 ![Graph 1](C:\Users\Rodrigo Silva\Documents\ISYE6644\virtualenv\.git\Graph1.png)
+
+The average number in the system, by definition, is: 
+<a href="https://www.codecogs.com/eqnedit.php?latex=\bar{L}&space;=&space;\frac{1}{29}\int_{0}^{29}L(t)dt&space;=&space;\frac{70}{29}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bar{L}&space;=&space;\frac{1}{29}\int_{0}^{29}L(t)dt&space;=&space;\frac{70}{29}" title="\bar{L} = \frac{1}{29}\int_{0}^{29}L(t)dt = \frac{70}{29}" /></a> \
+In words, this means that the average in the system is equal to the integral from 0 to 29 (29 is  when the simulation ends) divided by the time (1/29). In fact, it turns out that the simulation
+is a **step function**, so to take the integral you can add up the rectangles.
+
+Another way to get the average number in the system is to calculate:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\bar{L}&space;=&space;\frac{total\&space;person-time\&space;in&space;\&space;system}{29}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\bar{L}&space;=&space;\frac{total\&space;person-time\&space;in&space;\&space;system}{29}" title="\bar{L} = \frac{total\ person-time\ in \ system}{29}" /></a>\
+<a href="https://www.codecogs.com/eqnedit.php?latex==&space;\frac{\sum_{i&space;=&space;1}^{6}(D_{i}-A_{i})}{29}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?=&space;\frac{\sum_{i&space;=&space;1}^{6}(D_{i}-A_{i})}{29}" title="= \frac{\sum_{i = 1}^{6}(D_{i}-A_{i})}{29}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex==&space;\frac{7&plus;12&plus;14&plus;16&plus;12&plus;9}{29}&space;=&space;\frac{70}{29}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?=&space;\frac{7&plus;12&plus;14&plus;16&plus;12&plus;9}{29}&space;=&space;\frac{70}{29}" title="= \frac{7+12+14+16+12+9}{29} = \frac{70}{29}" /></a>
