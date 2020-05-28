@@ -1,4 +1,4 @@
-#Single server queues
+#Single server queues\
 We will simulate the line that forms in front of a single server at a bakery.
 This is our first "real" simulation model involving non-static customers.
 
@@ -8,12 +8,11 @@ Customers arrive at a single-server queue with iid interarrival times and iid se
 * The expected number of people in the system; and
 * The server utilization (proportion of busy time)
 
-###Notation
+###Notation\
 1. **Interarrival time between customers** *i-1* **and** *i* is *I<sub>i*. We will generate this variable randomly.
 2. **Customer** *i* **'s arrival time is:**\
  *A<sub>i</sub> = $\sum_{j = 1}^{i} I<sub>j</sub>$*\
- This means that the customer's arrival time is just the sum of all the interarrival time between customers.
-\
+ This means that the customer's arrival time is just the sum of all the interarrival time between customers.\
 3.  **Customer** *i* **is going to start service at time**\
 *T<sub>i</sub> = max(A<sub>i</sub>,D<sub>i-1</sub>)*\
 The customer is going to start service at time: the maximum between his arrival time or if there is someone ahead of him, the departure time of the previous customer.\
