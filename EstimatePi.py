@@ -9,7 +9,7 @@ class EstimatePi(object):
         # First, we need to create the unit square and circle of radius 1/2 inside
         self.fig, self.ax = plt.subplots() #create axis and figure objects
         self.ax.set(xlim = (0,1), ylim= (0,1)) #create unit square
-        self.ax.add_patch(mpl.patches.Circle((0.5,0.5), radius= 0.5, fill= False, edgecolor= 'blue', linewidth = 2)) #add circle to the axis
+        self.ax.add_patch(mpl.patches.Circle((0.5,0.5), radius= 0.5, fill= False, edgecolor= 'black', linewidth = 2)) #add circle to the axis
 
     def simulate_darts(self, N):
         # we need to create an array with random uniform numbers for x and y coordinates
@@ -36,5 +36,5 @@ class EstimatePi(object):
 
 
 a = EstimatePi()
-a.simulate_darts(100)
+a.simulate_darts(10000)
 
