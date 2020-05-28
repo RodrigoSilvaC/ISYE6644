@@ -37,3 +37,17 @@ Example:
 |4    |4            |10           |20           |10                       |6            |26           |
 |5    |5            |15           |26           |11                       |1            |27           |
 |6    |5            |20           |27           |7                        |2            |29           |
+
+From the table we can get easily the **average waiting time for the six customers** by getting a simple average from the 
+customer's waiting time (W<sub>i</sub><sup>Q</sup>):\
+
+|W<sub>i</sub><sup>Q</sup>|
+|-------------------------|
+|0                        |
+|6                        |
+|10                       |
+|10                       |
+|11                       |
+|7                        |
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\sum_{i=1}^{6}{W{_{i}^{Q}}/6}&space;=&space;7.33" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sum_{i=1}^{6}{W{_{i}^{Q}}/6}&space;=&space;7.33" title="\sum_{i=1}^{6}{W{_{i}^{Q}}/6} = 7.33" /></a>
