@@ -18,7 +18,7 @@ class EstimatePi(object):
         #create category 'cat' list
         cat = []
         for i in range(N):
-            # using the circle's formula, if the sum of the distances is less than radius^2 then its inside the circle
+            # using the circle's formula, if the sum of the distances from center is less than radius^2 then its inside the circle
             cond = (0.5-x[i])**2 + (0.5-y[i])**2
             if cond <= 0.25:
                 cat.append(1)
@@ -36,5 +36,5 @@ class EstimatePi(object):
 
 
 a = EstimatePi()
-a.simulate_darts(10000)
+a.simulate_darts(1000000)
 
