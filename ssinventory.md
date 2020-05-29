@@ -22,6 +22,18 @@ supplying). In addition, you have to pay a unit cost of *cZ<sub>i</sub>*. Moreov
 if demand can´t be met. No backlogs are allowed. Demand on the day *i* is *D<sub>i</sub>*. Note that
 *D<sub>i</sub>* is the only random variable in the model.
 
+## Variables
+
+|variable|value|
+|--------|-----|
+|*d*     |Amount of money we make per sale   |
+|*s*     |The point at which we start worrying about ordering again    |
+|*S*     |The maximum stock   |
+|*K*     |Cost for replacing and order     |
+|*c*     |Unit cost for replacing an item    |
+|*h*     |The holding cost    |
+|*p*     |The penalty cost    |
+
 ## Model
 <a href="https://www.codecogs.com/eqnedit.php?latex=Total&space;=&space;Sales&space;-&space;Ordering&space;Cost&space;-&space;Holding&space;Cost&space;-&space;Penalty&space;Cost" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Total&space;=&space;Sales&space;-&space;Ordering&space;Cost&space;-&space;Holding&space;Cost&space;-&space;Penalty&space;Cost" title="Total = Sales - Ordering Cost - Holding Cost - Penalty Cost" /></a>
 
