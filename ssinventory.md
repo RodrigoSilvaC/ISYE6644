@@ -54,7 +54,7 @@ Consider the following sequence of demands:
 
 In addition, suppose that we start out with an initial stock of *I<sub>0</sub> + Z<sub>0</sub> = 10*.
 
-![Example](sS_model_example.png)
+![Example](sS_model_example1.png)
 
 
 
