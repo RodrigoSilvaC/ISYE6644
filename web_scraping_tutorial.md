@@ -134,3 +134,58 @@ We do this because scrapy will return raw html markup without JavaScript. So we
 in order to see the website like scrapy does, we disable JavaScript.
 
 ![web_scraping_16](web_scraping_16.png)
+
+#### xpath
+In this website, the tag "//h1" is the one which gives us the title. There are cases where the same tag
+give us more than one result, and in that case you will need to filter further. 
+
+To get the selector of the title, we use the command: 
+
+**response.xpath("filter used to get the section")**
+
+![web_scraping_17](web_scraping_17.png)
+
+If we want to get only the text and not the markup, we use the expression ***/text()*** in combination with ***.get()***
+
+![web_scraping_18](web_scraping_18.png)
+
+Now, suppose we want to get the names of all the countries. When we select a country name with the browser selector, 
+we get the label *//a*.
+
+Here, the problem is that not only the countries have this label, so if we use only this label we will select more values than the countries names.
+
+![web_scraping_21](web_scraping_21.png)
+
+Notice that we want all labels *//a* that are inside the *//td* element. So we change the xpath to ***//td/a*** 
+
+![web_scraping_22](web_scraping_22.png)
+
+Here, because we are selecting more than one text, we need to use the method ***.getall()***
+
+#### css selector
+
+To get the selector of the title, we use the command: 
+
+**response.css("filter used to get the section")**
+
+![web_scraping_19](web_scraping_19.png)
+
+to get the text, we also use the ***.get()*** method
+
+![web_scraping_20](web_scraping_20.png)
+
+### modifying the spider 
+After looking at the website with scrapy shell, we now proceed to modify the spider named countries that we created before.
+
+We modify the parse method inside the spider, with the xpath selectors we got previously
+
+![web_scraping_23](web_scraping_23.png)
+
+In scrapy, if you want to return the data, you need to return it as a dictionary. That is why we use the **yield**
+function with the dictionary format.
+
+![web_scraping_24](web_scraping_24.png)
+
+**IMPORTANT:** to execute the spider, you need to make sure you are on the same level as the "scrapy.cfg" file
+
+
