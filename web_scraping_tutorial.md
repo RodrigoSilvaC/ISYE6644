@@ -77,3 +77,55 @@ As you can see, the spider is a class object.
 |*allowed_domains*     |this variable must contain all the domain names that this spider must be able to access and scrape. **IMPORTANT:** NEVER put the "http(s)://" protocol at the begining of this variable.   |
 |*start_urls*     |the URLS the spider will scrape. **IMPORTANT:** scrapy by default sets the protocol as "http://", but if the website you want to scrape uses the https protocol add the "s".   |
 
+Inside the class object, we get a **parse method**. This method parses the response we get back
+from the spider.
+
+### how spiders see websites
+It is important to know how spiders see websites. They basically see the websites **without** the JavaScript.
+To view a website without Javascript:
+1. Access on Chrome to the inspect page (CTRL + SHIFT + I)
+![web_scraping_14](web_scraping_14.png)
+2.  Press (CTRL + SHIFT + P) and type "JavaScript". Choose the second option "Disable JavaScript"
+![web_scraping_15](web_scraping_15.png)
+3.  Refresh the page
+### scrapy shell
+The teacher recommended to install the ipython package. (I'm not sure why).
+
+The command to start scrapy shell on the Terminal is: 
+
+**scrappy shell**
+
+![web_scraping_9](web_scraping_9.png)
+
+At the end of the Terminal we can see that this command gave us a list of useful shortcuts we will use commonly.
+
+![web_scraping_10](web_scraping_10.png)
+
+|Shortcut|Meaning|
+|--------|-----|
+|*fetch(url[, redirect = True])*     ||
+|*fetch(req)*     ||
+|*shelp*     ||
+|*view(response)*     |View a webpage in a browser|
+
+#### method 1 to open a url on the shell: fetch(url)
+
+![web_scraping_11](web_scraping_11.png)
+
+The "GET" we see in the results from using fetch is the type of the request that was sent. 
+* 404 is the response status code, meaning that scrapy was not able to find a robots.txt file on the website
+* 200 is the response that means scrapy was able fulfill a request for this url. 
+
+#### method 2 to open a url on the shell: constructing a request object
+
+![web_scraping_12](web_scraping_12.png)
+
+If we wanted to obtain the html contents of the webpage we can do it with the command 
+
+**response.body**
+
+![web_scraping_13](web_scraping_13.png)
+
+### element selection
+The teacher recommended to install the ipython package. (I'm not sure why).
+
