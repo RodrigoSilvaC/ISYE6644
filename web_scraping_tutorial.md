@@ -126,6 +126,11 @@ If we wanted to obtain the html contents of the webpage we can do it with the co
 
 ![web_scraping_13](web_scraping_13.png)
 
-### element selection
-The teacher recommended to install the ipython package. (I'm not sure why).
+## Element selection with xpath and css selector
+Suppose we want to select the title from the world population by country website.
 
+The first thing we need to do is to disable JavaScript on the browser. 
+We do this because scrapy will return raw html markup without JavaScript. So we
+in order to see the website like scrapy does, we disable JavaScript.
+
+![web_scraping_16](web_scraping_16.png)
