@@ -233,3 +233,106 @@ As we can see, now we have a dictionary with the info from each country of:
 * name; and 
 * link of the country's website
 
+### modifying the spider PT.3
+
+Now, we want to access the website saved on the spider as the variable "link".
+
+Previously we learned to use the fetch command from scrapy. However, we cannot use fetch inside the spiders.
+
+Instead, we will use the **Request** method
+
+![web_scraping_32](web_scraping_32.png)
+
+**IMPORTANT:** We need to add either the *http* or *https*, because if we don't add either of them, we will get the error **Missing scheme** 
+
+![web_scraping_33](web_scraping_33.png)
+
+We can add the absolute url in several ways: 
+
+Pasting the absolute url as string:
+![web_scraping_34](web_scraping_34.png)
+
+Using the function *.urljoin()*:
+![web_scraping_35](web_scraping_35.png)
+
+Using *response.follow* with the relative url link:
+![web_scraping_36](web_scraping_36.png)
+
+Now, we need to catch every country response and parse it. For this, we need to define another method: 
+
+![web_scraping_37](web_scraping_37.png)
+
+With the callback option inside the response.follow method, when scrapy sends a request to each country link, 
+the reponse will be sent to the parse_country method. 
+
+In the example we also used the logging library to show a mini log of every request. 
+
+Now, we want to get the population from each year that is located inside the country's website.
+
+![web_scraping_38](web_scraping_38.png)
+
+To select the table, we use the xpath:
+
+**(//table[@class = 'table table-striped table-bordered table-hover table-condensed table-list'])[1]**
+
+![web_scraping_39](web_scraping_39.png)
+
+On the xpath, we used the "[1]" argument to get only the first table.
+
+Now, we want to select from the table the population: 
+
+**(//table[@class = 'table table-striped table-bordered table-hover table-condensed table-list'])[1]/tbody/tr**
+
+We now get 18 elements. We put the xpath into the spider, inside the parse_country method: 
+
+![web_scraping_40](web_scraping_40.png)
+
+![web_scraping_41](web_scraping_41.png)
+
+
+On the new parse_country method:
+
+* First, we got the rows with the xpath selector that we previously obtained. **year is the first *td* element**; 
+* Then, we run a loop through the response to get the year and population **the population is in the second td element, inside a strong element**
+
+Note that we don't have the country name variable assigned in the parse_country method. To sync the data between two parse methods, 
+we have to use a **request meta**. 
+
+![web_scraping_42](web_scraping_42.png)
+
+The request meta is simply a dictionary, which you create inside the parse method with the variable you want to sync, and then call it
+on the other parse method using the *response.request.meta* method.
+ 
+### Building the dataset
+Scrapy allow us to export the data in many formats, including *.json*, *.csv* and *.xml* formats. 
+
+To export the data, simply go to the terminal and write the command: 
+
+***scrapy crawl (name of the spider) -o (name and format of the exported file)***
+
+![web_scraping_43](web_scraping_43.png)
+
+### Dealing with multiple pages
+For our example, we are going to scrape the website www.tinydeal.com
+
+![web_scraping_44](web_scraping_44.png)
+
+First, we will need to do the usual steps in scraping with scrapy: 
+
+1. Check restrictions of the website in the robots.txt file
+![web_scraping_45](web_scraping_45.png)
+2. Disable JavaScript on the browser, to see the website like a spider do
+3. Copy website URL and go to Anaconda Prompt to create a new project
+![web_scraping_46](web_scraping_46.png)
+4. Move to the project's name folder (in this case is the tinydeal folder) and create a spider
+![web_scraping_47](web_scraping_47.png)
+5. Go to VSCode and open the folder
+6. Inside the spider we just created: 
+    * Modify the allowed domains by deleting the "/specials.html"
+    ![web_scraping_48](web_scraping_48.png)
+    ![web_scraping_49](web_scraping_49.png)
+    * Change the http protocol to https inside the start_urls variable
+    ![web_scraping_50](web_scraping_50.png)
+
+Now, we will scrap the contents of the first page: 
+1. 
