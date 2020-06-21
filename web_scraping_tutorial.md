@@ -188,4 +188,48 @@ function with the dictionary format.
 
 **IMPORTANT:** to execute the spider, you need to make sure you are on the same level as the "scrapy.cfg" file
 
+![web_scraping_25](web_scraping_25.png)
+
+Now, to execute the spider, on the Terminal you write the command
+
+**scrapy crawl (name of spider previously created)**
+
+![web_scraping_26](web_scraping_26.png)
+
+### modifying the spider PT.2  
+lets modify more the parse method of the spider. 
+
+First, lets stop scraping the title. Then, for the countries variable we previously obtained only the text of the xpath
+selector used. However, if we go to the website
+
+![web_scraping_27](web_scraping_27.png)
+
+We can see that from the *a* element we can scrape the *a* element and then we can obtain the name by 
+extracting the text content of that element as shown before. 
+
+So, instead of extracting only the text, now we modify the selector to only *//td/a*, in order to extract
+the href element and the text element.
+
+![web_scraping_28](web_scraping_28.png)
+
+If we leave the countries response xpath, we will get a list of select objects, which will represent each a node.
+
+![web_scraping_29](web_scraping_29.png)
+
+Each selector objects on the list, have a data attribute that represents the full *a* element.
+
+**Since each country is a selected object, we can execute an xpath expression against it**
+
+![web_scraping_30](web_scraping_30.png)
+
+**IMPORTANT RULE:** When we are executing an xpath expression against a selected object, we ALWAYS start with
+"***.//***".
+
+Saving and executing the spider gives us: 
+
+![web_scraping_31](web_scraping_31.png)
+
+As we can see, now we have a dictionary with the info from each country of: 
+* name; and 
+* link of the country's website
 
