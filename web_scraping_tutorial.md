@@ -335,4 +335,17 @@ First, we will need to do the usual steps in scraping with scrapy:
     ![web_scraping_50](web_scraping_50.png)
 
 Now, we will scrap the contents of the first page: 
-1. 
+![web_scraping_50](web_scraping_50.png)
+
+Notice that when we get the dataset, the file doesn't have an encoding, so we need to fix this
+![web_scraping_51](web_scraping_51.png)
+
+To set the encoding, we go to the ***settings.py*** file and write: 
+
+***FEED_EXPORT_ENCODING = 'utif-8'***
+
+![web_scraping_52](web_scraping_52.png)
+
+Finally, the next step is to deal with the pagination
+![web_scraping_53](web_scraping_53.png)
+
